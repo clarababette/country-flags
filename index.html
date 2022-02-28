@@ -19,12 +19,27 @@
   </head>
   <body>
     <div class="container">
-      <h1>Countries with their flags</h1>
+      <h1 class="title">Countries with their flags</h1>
+      <div class="add_countries">
+        <div>Add to your list of countries</div>
+        <label for="country">Country</label>
+        <input type="text" id="country" />
+        <div class="country_error"></div>
+        <label for="flag">Flag</label>
+        <input type="text" id="flag" />
+        <div class="flag_error"></div>
+        <input type="button" value="Add" class="add_btn button" />
+      </div>
+      <div class="search_countries">
+        <input type="text" placeholder="Search" class="search_criteria" />
+        <button class="search_btn material-icons-round">search</button>
+        <div class="results"></div>
+        <button class="clear_search">x</button>
+      </div>
       <div class="countries"></div>
     </div>
   </body>
   <script src="countries.js"></script>
-  <script src="emojis.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
   <script id="handlebars-template" type="text/x-handlebars-template">
     {{#each countries}}

@@ -15,12 +15,40 @@ h1 {
   text-align: left;
 }
 
+.button {
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.5rem;
+  background-color: black;
+  width: fit-content;
+}
+input[type='text'] {
+  border: 1px solid;
+  padding: 5px;
+  font-weight: 500;
+  margin: 10px auto;
+  text-align: left;
+  width: auto;
+}
+
 .container {
   width: calc(100% - 20px);
   display: grid;
   margin: 0px auto;
   row-gap: 10px;
   column-gap: 10px;
+  grid-template-areas:
+    'title     title'
+    'search    .'
+    'countries add'
+    'countries .';
+  justify-items: start;
+}
+
+.title {
+  grid-area: title;
 }
 
 .countries {
@@ -28,7 +56,27 @@ h1 {
   flex-wrap: wrap;
   row-gap: 5px;
   column-gap: 5px;
+  grid-area: countries;
+  align-items: flex-start;
 }
+
+.add_countries {
+  grid-area: add;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  align-content: flex-start;
+}
+
+.add_countries input {
+  width: 10rem;
+}
+
+.add_countries :first-child {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
 .country {
   border: solid 1px;
   padding: 10px;
@@ -39,9 +87,42 @@ h1 {
   width: 5em;
 }
 
-.name {
+/* .name {
+} */
+
+.search_btn {
+  background: none;
+  border: none;
 }
 
 .flag {
   font-size: 4em;
+}
+
+#flag {
+  font-size: 5em;
+  text-align: center;
+}
+
+.search_countries {
+  grid-area: search;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.country_error,
+.flag_error {
+  font-size: 0.7em;
+  text-align: left;
+  color: crimson;
+  margin-bottom: 2em;
+  min-height: 1em;
+}
+
+.clear_search {
+  border: none;
+  color: crimson;
+  background: none;
+  font-weight: 700;
+  display: none;
 }
