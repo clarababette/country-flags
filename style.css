@@ -126,3 +126,64 @@ input[type='text'] {
   font-weight: 700;
   display: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      'title'
+      'add'
+      'search'
+      'countries';
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  .country {
+    width: 3em;
+  }
+
+  .flag {
+    font-size: 1.5em;
+  }
+
+  .name {
+    font-size: 0.5em;
+  }
+
+  .add_countries {
+    font-size: 0.7em;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+  }
+
+  .add_countries :first-child {
+    font-weight: 700;
+    margin-bottom: 1em;
+    grid-column: span 3;
+  }
+  .add_countries input {
+    width: auto;
+    grid-row: 3;
+    font-size: 0.7em;
+  }
+
+  .add_countries input.button {
+    grid-column: 3;
+    grid-row: 4;
+  }
+  .add_countries label {
+    grid-row: 2;
+  }
+  #flag {
+    width: 100%;
+    font-size: 1em;
+    width: 3em;
+  }
+
+  .country_error,
+  .flag_error {
+    grid-row: 4;
+  }
+}
