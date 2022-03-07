@@ -44,7 +44,6 @@
       <a href="https://emojipedia.org/flags/">Find more flags here!</a>
     </div>
   </body>
-  <script src="countries.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
   <script id="handlebars-template" type="text/x-handlebars-template">
     {{#each countries}}
@@ -54,5 +53,7 @@
       </div>
     {{/each}}
   </script>
-  <script src="index.js"></script>
+  <script type="module" src="./useful_functions.js"></script>
+  <script type="module" src="./countries.js"></script>
+  <script type="module" src="./index.js"></script>
 </html>
